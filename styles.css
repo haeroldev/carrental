@@ -1,0 +1,254 @@
+:root {
+  color-scheme: dark;
+  --bg: #101010;
+  --surface: #191919;
+  --surface-soft: #272727;
+  --text: #f4f4f4;
+  --muted: #d6d6d6;
+  --accent: #ff9700;
+  --accent-soft: #ffb43f;
+  --border: rgba(255, 151, 0, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top, rgba(255, 151, 0, 0.12), transparent 35%),
+    linear-gradient(180deg, #111 0%, #090909 100%);
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 30px 0 50px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+  align-items: center;
+  padding: 36px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(255, 151, 0, 0.2), rgba(20, 20, 20, 0.96));
+  border: 1px solid rgba(255, 151, 0, 0.18);
+}
+
+.brand-panel {
+  display: grid;
+  gap: 24px;
+}
+
+.logo-wrap {
+  width: 96px;
+  aspect-ratio: 1;
+  min-width: 96px;
+}
+
+.logo {
+  width: 100%;
+  border-radius: 18px;
+  background: #000;
+  object-fit: contain;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.82rem;
+  color: var(--accent-soft);
+  margin: 0 0 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(3rem, 3.8vw, 5rem);
+  letter-spacing: -0.05em;
+}
+
+.hero-subtitle {
+  margin: 18px 0 0;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 560px;
+}
+
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+  align-items: center;
+}
+
+.phone {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #111;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-section,
+.fleet-section {
+  margin-top: 42px;
+  padding: 32px;
+  border-radius: 28px;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.section-heading {
+  max-width: 560px;
+}
+
+.section-label {
+  display: inline-flex;
+  margin-bottom: 12px;
+  font-size: 0.93rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.services-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 24px;
+}
+
+.service-card {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: var(--surface-soft);
+  color: var(--text);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.fleet-section {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.fleet-copy h2 {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 2.4vw, 3rem);
+}
+
+.fleet-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.fleet-item {
+  display: flex;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: #111;
+  align-items: center;
+}
+
+.fleet-icon {
+  font-size: 1.8rem;
+}
+
+.cta-block {
+  margin-top: 28px;
+  padding: 22px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 151, 0, 0.12), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 151, 0, 0.18);
+}
+
+.cta-block p {
+  margin: 0 0 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.social-button {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(255, 151, 0, 0.18);
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.fleet-images {
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255, 151, 0, 0.08), rgba(20, 20, 20, 0.96));
+}
+
+.footer {
+  margin-top: 32px;
+  padding: 22px 30px;
+  border-radius: 24px;
+  background: var(--surface-soft);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--muted);
+}
+
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .fleet-section {
+    grid-template-columns: 1fr;
+  }
+  .page-shell {
+    width: min(100%, calc(100% - 30px));
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 24px;
+    gap: 24px;
+  }
+  .service-card,
+  .fleet-item,
+  .cta-block {
+    padding: 16px;
+  }
+}
