@@ -74,8 +74,23 @@
             <a href="https://www.facebook.com" target="_blank" class="social-button">Mak Mak Rentals on Facebook</a>
           </div>
         </div>
-        <div class="fleet-images">
-          <img src="assets/car2.png" alt="Mak Mak Rentals jeepney" />
+        <div class="carousel-container">
+          <div class="carousel-slide active">
+            <img src="assets/l300.png" alt="Mak Mak Rentals L300 FB" />
+            <p class="carousel-caption">L300 FB 2026</p>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/jeep.png" alt="Mak Mak Rentals 34-Seater Jeep" />
+            <p class="carousel-caption">34-Seater Jeep with Aircon</p>
+          </div>
+          
+          <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+          <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+          
+          <div class="carousel-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+          </div>
         </div>
       </section>
     </main>
@@ -85,5 +100,29 @@
       <p>Contact: <a href="tel:09486233865">0948 623 3865</a></p>
     </footer>
   </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(n) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      slides[n].classList.add('active');
+      dots[n].classList.add('active');
+    }
+
+    function changeSlide(direction) {
+      currentSlide = (currentSlide + direction + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function goToSlide(n) {
+      currentSlide = n;
+      showSlide(currentSlide);
+    }
+  </script>
 </body>
 </html>
